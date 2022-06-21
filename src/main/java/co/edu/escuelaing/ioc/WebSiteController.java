@@ -45,4 +45,12 @@ public class WebSiteController {
     public String hi(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Post, Hello %s!", name);
     }
+    
+    private int getPort(){
+        if (System.getenv("PORT") != null){
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 36000;
+        
+    }
 }
